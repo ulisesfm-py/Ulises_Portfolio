@@ -1,18 +1,14 @@
 from flask import Flask, render_template
+import os
 
 app = Flask(__name__)
 
 
 @app.route("/")
+@app.route("/index.html")
 def my_home():
     return render_template('index.html')
 
-
-@app.route("/generic.html")
-def my_generic():
-    return render_template('generic.html')
-
-
-@app.route("/elements.html")
-def my_elements():
-    return render_template('elements.html')
+@app.route('/<string:page_name>')
+def html_page(page_name):
+    return render_template(page_name)
