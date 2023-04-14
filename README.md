@@ -4,13 +4,14 @@
 
 In order to run the server with flask i follow these steps: 
  1- Activate the enviornment where I installed Flask: 
- '''bash
+ ```bash
 $ . Scripts/activate
- '''
+ ```
 
  2- Run flask with the debug mode on: 
- '''bash
+ ```bash
 $ flask --app server.py run --debug
+```
 
  3- Paste 'http://127.0.0.1:5000' in your browser 
 
