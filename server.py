@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import os
 
 app = Flask(__name__)
@@ -15,4 +15,9 @@ def html_page(page_name):
 
 @app.route('/submit_form', methods=['POST', 'GET'])
 def submit_form():
-    return 'form submited'
+    if request.method == 'POST':
+        data = request.form.to_dict()
+        print(data)
+        return redirect('/thank_you.html')
+    else: 
+        return 'something went wrong'
